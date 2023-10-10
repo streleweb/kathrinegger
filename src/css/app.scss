@@ -1,0 +1,68 @@
+@font-face {
+  font-family: agrandir-regular;
+  src: url(./fonts/Agrandir-Regular.otf);
+}
+@font-face {
+  font-family: agrandir-grandheavy;
+  src: url(./fonts/Agrandir-GrandHeavy.otf);
+}
+@font-face {
+  font-family: agrandir-grandlight;
+  src: url(./fonts/Agrandir-GrandLight.otf);
+}
+@font-face {
+  font-family: agrandir-narrow;
+  src: url(./fonts/Agrandir-Narrow.otf);
+}
+@font-face {
+  font-family: agrandir-textbold;
+  src: url(./fonts/Agrandir-TextBold.otf);
+}
+@font-face {
+  font-family: agrandir-thinitalic;
+  src: url(./fonts/Agrandir-ThinItalic.otf);
+}
+@font-face {
+  font-family: agrandir-tight;
+  src: url(./fonts/Agrandir-Tight.otf);
+}
+@font-face {
+  font-family: agrandir-wideblackitalic;
+  src: url(./fonts/Agrandir-WideBlackItalic.otf);
+}
+@font-face {
+  font-family: agrandir-widelight;
+  src: url(./fonts/Agrandir-WideLight.otf);
+}
+
+
+.agrandir-regular{
+  font-family: agrandir-regular;
+}
+.agrandir-bold{
+  font-family: agrandir-textbold;
+}
+.agrandir-wide-light{
+  font-family: agrandir-widelight;
+}
+.agrandir-tight{
+  font-family: agrandir-tight;
+}
+.agrandir-thin-italic{
+  font-family: agrandir-thinitalic;
+}
+.agrandir-grand-heavy{
+  font-family: agrandir-grandheavy;
+}
+
+/* GLOBAL CSS*/
+body {
+  background-color: $secondary; /* Replace with your desired background color */
+}
+
+.half-opacity{
+  opacity: 90%;
+  background-color: black;
+}
+
+
