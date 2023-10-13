@@ -12,9 +12,9 @@ function toggleRightDrawer() {
 <template>
   <q-layout view="hhr lpR ffr">
 
-    <q-header class="bg-transparent text-primary header-sizing full-width flex">
+    <q-header class="bg-transparent header-sizing full-width flex text-primary">
       <q-toolbar>
-        <q-toolbar-title class="fontsize-toolbartitle">
+        <q-toolbar-title class="fontsize-toolbartitle text-primary">
           <q-avatar>
             <q-img src="icons/logo.png" class="logosize"/>
           </q-avatar>
@@ -25,7 +25,7 @@ function toggleRightDrawer() {
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="rightDrawerOpen" side="right" behavior="mobile" class="lt-sm bg-amber-10" :width="$q.screen.width/2">
+    <q-drawer v-model="rightDrawerOpen" side="right"  behavior="mobile" class="lt-sm bg-secondary" :width="$q.screen.width/2">
 
       <q-item>
         <q-item-section>
@@ -36,17 +36,17 @@ function toggleRightDrawer() {
       </q-item>
 
           <q-list separator padding class="menu-list menu-fontsize">
-            <q-item clickable v-ripple class="q-py-xl">
+            <q-item clickable v-ripple class="q-py-xl full-width">
               <q-item-section avatar class="hide-on-small">
                 <q-icon name="inbox" />
               </q-item-section>
 
               <q-item-section class="flex-center">
-                About Me
+                <div>About Me</div>
               </q-item-section>
             </q-item>
 
-            <q-item active clickable v-ripple class="q-py-xl">
+            <q-item active clickable v-ripple class="q-py-xl full-width">
               <q-item-section avatar class="hide-on-small">
                 <q-icon name="star" />
               </q-item-section>
@@ -56,7 +56,7 @@ function toggleRightDrawer() {
               </q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple class="q-py-xl">
+            <q-item clickable v-ripple class="q-py-xl full-width">
               <q-item-section avatar class="hide-on-small">
                 <q-icon name="send" />
               </q-item-section>
@@ -66,7 +66,7 @@ function toggleRightDrawer() {
               </q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple class="q-py-xl flex-center">
+            <q-item clickable v-ripple class="q-py-xl full-width">
               <q-item-section avatar class="hide-on-small">
                 <q-icon name="drafts" />
               </q-item-section>
@@ -100,9 +100,17 @@ function toggleRightDrawer() {
 <style scoped lang="scss">
 
 
+
 .header-sizing{
+  @media(min-width: 601px) {
+    height: 53px;
+  }
   @media (min-width: 768px) {
-    height: 10.2vh
+    height: 8.7vh;
+  }
+
+  @media (min-width: 1400px){
+    height: 11.2vh;
   }
 }
 
@@ -122,6 +130,13 @@ function toggleRightDrawer() {
 .fontsize-toolbartitle{
   @media(max-width: 767px){
     font-size: 14px;
+  }
+}
+
+.q-page-container{
+  @media (min-width:601px){
+    padding-top: 50px;
+    padding-bottom: 51px;
   }
 }
 </style>

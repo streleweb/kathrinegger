@@ -57,12 +57,32 @@
 
 /* GLOBAL CSS*/
 body {
-  background-color: $secondary; /* Replace with your desired background color */
+  background-color: #660708; /* Replace with your desired background color */
+  overflow-x: hidden; /* Hide scrollbars */
 }
 
+
 .half-opacity{
-  opacity: 90%;
-  background-color: black;
+  opacity: 30%;
 }
+
+#kathrin-canvas{
+  position: absolute;
+  opacity: 70%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: rgb(155, 21, 21);
+  // border: 1px solid white;
+  top:49.99px;
+  width: 100%;
+  z-index: 0;
+  height: 82%;
+  @media (min-width: 601px){
+    top: 8%;
+    height: 87%;
+  }
+}
+
 
 

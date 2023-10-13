@@ -15,12 +15,28 @@
 // Set the default font-family
 $typography-font-family : 'agrandir-regular', sans-serif !default;
 
-$primary   : #A13842;
-$secondary : #E7D6AC;
-$accent    : #6EB5A5;
+// $primary   : #A13842;
+// $secondary : #E7D6AC;
+// $accent    : #6EB5A5;
 
-$dark      : #1D1D1D;
-$dark-page : #121212;
+// $dark      : #1c060683;
+// $dark-page : #121212;
+
+// $positive  : #21BA45;
+// $negative  : #C10015;
+// $info      : #31CCEC;
+// $warning   : #F2C037;
+
+// Cool palette https://coolors.co/palette/0b090a-161a1d-660708-a4161a-ba181b-e5383b-b1a7a6-d3d3d3-f5f3f4-ffffff
+
+// 0B090A 161A1D 660708 A4161A BA181B E5383B B1A7A6 D3D3D3 F5F3F4
+
+$primary   : #660708;
+$secondary : #E7D6AC;
+$accent    : #F5F3F4;
+
+$dark      : #161A1D;
+$dark-page : #F5F3F4;
 
 $positive  : #21BA45;
 $negative  : #C10015;
