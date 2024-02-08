@@ -1,5 +1,5 @@
 const kathrinImage = new Image();
-kathrinImage.src = 'images/kathrin_hero_eyespop.png'
+kathrinImage.src = 'images/kathrin_hero_eyespop.webp'
 
 
 
@@ -15,7 +15,7 @@ kathrinImage.src = 'images/kathrin_hero_eyespop.png'
      const pixels = ctx.getImageData(0,0, canvas.width, canvas.height);
     // console.log(pixels)
     let allParticles = [];
-    const numberOfParticles = 300;
+    const numberOfParticles = 150;
 
     let mappedImage = [];
 

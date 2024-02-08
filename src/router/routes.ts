@@ -8,15 +8,28 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '',
+        name: 'home',
         component: () => import('pages/HomePage.vue'), // SSR
       },
       {
-        path: 'about-me',
+        path: 'about',
+        name: 'about',
         component: () => import('pages/AboutPage.vue'), // SSR
       },
       {
-        path: 'store',
-        component: () => import('pages/StorePage.vue'), // SSR
+        path: 'shop',
+        name: 'shop',
+        component: () => import('pages/ShopPage.vue'), // SSR
+      },
+      {
+        path: 'blog',
+        name: 'blog',
+        component: () => import('pages/BlogPage.vue'), // SSR
+      },
+      {
+        path: 'contact',
+        name: 'contact',
+        component: () => import('pages/ContactPage.vue'), // SSR
       },
     ],
   },

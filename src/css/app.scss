@@ -57,7 +57,7 @@
 
 /* GLOBAL CSS*/
 body {
-  background-color: #660708; /* Replace with your desired background color */
+  background-color: #520121; /* #660708 Replace with your desired background color */
   overflow-x: hidden; /* Hide scrollbars */
 }
 
@@ -66,23 +66,29 @@ body {
   opacity: 30%;
 }
 
-#kathrin-canvas{
-  position: absolute;
-  opacity: 70%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: rgb(155, 21, 21);
-  // border: 1px solid white;
-  top:49.99px;
-  width: 100%;
-  z-index: 0;
-  height: 82%;
-  @media (min-width: 601px){
-    top: 8%;
-    height: 87%;
+.hide-on-small{
+  @media(max-width: 320px){
+    display: none;
   }
 }
+
+// #kathrin-canvas{
+//   position: absolute;
+//   opacity: 70%;
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   background: #520121;
+//   // border: 1px solid white;
+//   top:49.99px;
+//   width: 100%;
+//   z-index: 0;
+//   height: 100%;
+//   @media (min-width: 601px){
+//     top: 8%;
+//     height: 87%;
+//   }
+// }
 
 
 

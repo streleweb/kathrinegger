@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-
 const rightDrawerOpen = ref(false)
 
 function toggleRightDrawer() {
@@ -12,33 +11,44 @@ function toggleRightDrawer() {
 <template>
   <q-layout view="hhr lpR ffr">
 
-    <q-header class="bg-transparent header-sizing full-width flex text-primary">
-      <q-toolbar>
+    <q-header class="bg-secondary header-sizing full-width flex text-primary items-center">
+      <q-toolbar class="bg-secondary">
         <q-toolbar-title class="fontsize-toolbartitle text-primary">
-          <q-avatar>
-            <q-img src="icons/logo.png" class="logosize"/>
-          </q-avatar>
+          <div id="branding" @click="$router.push({name: 'home'})" style="cursor: pointer;">
+            <q-avatar>
+              <q-img src="icons/logo.png" class="logosize"/>
+            </q-avatar>
           kathrinegger
+          </div>
+
         </q-toolbar-title>
 
-        <q-btn class="lt-sm" dense flat icon="menu" @click="toggleRightDrawer" />
+        <!-- Menu items on larger than mobile -->
+        <q-tabs no-caps class="gt-sm q-mr-lg">
+          <q-tab class="fontsize16" name="shop" label="Shop"/>
+          <q-tab class="fontsize16" name="aboutme" label="About Me" />
+          <q-tab class="fontsize16" name="blog" label="Mein Blog" />
+          <q-tab class="fontsize16" name="gallerie" label="Gallerie" />
+        </q-tabs>
+
+        <q-btn class="lt-md" dense flat icon="menu" @click="toggleRightDrawer" />
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="rightDrawerOpen" side="right"  behavior="mobile" class="lt-sm bg-secondary" :width="$q.screen.width/2">
+    <q-drawer v-model="rightDrawerOpen" side="right"  behavior="mobile" class="lt-md bg-secondary text-primary" :width="$q.screen.width/2" >
 
       <q-item>
         <q-item-section>
           <q-item-label class="flex absolute-right q-pr-sm">
-            <q-btn class="lt-sm" dense flat padding="1.2rem 0.8rem" icon="close" @click="toggleRightDrawer" />
+            <q-btn class="lt-md" dense flat padding="1.2rem 0.8rem" icon="close" @click="toggleRightDrawer" />
           </q-item-label>
         </q-item-section>
       </q-item>
 
           <q-list separator padding class="menu-list menu-fontsize">
-            <q-item clickable v-ripple class="q-py-xl full-width">
+            <q-item clickable @click="$router.push({ name: 'about'})" v-ripple class="q-py-xl full-width">
               <q-item-section avatar class="hide-on-small">
-                <q-icon name="inbox" />
+                <q-icon name="person" />
               </q-item-section>
 
               <q-item-section class="flex-center">
@@ -46,9 +56,9 @@ function toggleRightDrawer() {
               </q-item-section>
             </q-item>
 
-            <q-item active clickable v-ripple class="q-py-xl full-width">
+            <q-item active clickable @click="$router.push({ name: 'shop'})" v-ripple class="q-py-xl full-width">
               <q-item-section avatar class="hide-on-small">
-                <q-icon name="star" />
+                <q-icon name="shop" />
               </q-item-section>
 
               <q-item-section class="flex-center">
@@ -56,9 +66,9 @@ function toggleRightDrawer() {
               </q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple class="q-py-xl full-width">
+            <q-item clickable @click="$router.push({ name: 'blog'})" v-ripple class="q-py-xl full-width">
               <q-item-section avatar class="hide-on-small">
-                <q-icon name="send" />
+                <q-icon name="map" />
               </q-item-section>
 
               <q-item-section class="flex-center">
@@ -66,7 +76,7 @@ function toggleRightDrawer() {
               </q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple class="q-py-xl full-width">
+            <q-item clickable @click="$router.push({ name: 'contact'})" v-ripple class="q-py-xl full-width">
               <q-item-section avatar class="hide-on-small">
                 <q-icon name="drafts" />
               </q-item-section>
@@ -83,13 +93,13 @@ function toggleRightDrawer() {
       <router-view />
     </q-page-container>
 
-    <q-footer bordered class="bg-grey-8 text-white full-width">
+    <q-footer id="footer-toolbar" bordered class="bg-black full-width">
       <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <q-img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-          </q-avatar>
-          <div>Title</div>
+        <q-toolbar-title class="row justify-center text-body2 text-weight-thin">
+
+          <div>
+            <q-btn color="primary" flat label="Impressum" @click="onClick" />
+            <q-btn color="primary" flat label="Datenschutz" @click="onClick" /></div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
@@ -99,11 +109,9 @@ function toggleRightDrawer() {
 
 <style scoped lang="scss">
 
-
-
 .header-sizing{
   @media(min-width: 601px) {
-    height: 53px;
+    height: 65px;
   }
   @media (min-width: 768px) {
     height: 8.7vh;
@@ -121,11 +129,6 @@ function toggleRightDrawer() {
   }
 }
 
-.hide-on-small{
-  @media(max-width: 320px){
-    display: none;
-  }
-}
 
 .fontsize-toolbartitle{
   @media(max-width: 767px){
@@ -133,10 +136,13 @@ function toggleRightDrawer() {
   }
 }
 
-.q-page-container{
-  @media (min-width:601px){
-    padding-top: 50px;
-    padding-bottom: 51px;
-  }
+.fontsize16{
+  font-size: 16px;
 }
+
+#footer-toolbar{
+  border-top: 0.1px solid $secondary;
+  opacity: 0.8;
+}
+
 </style>
