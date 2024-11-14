@@ -1,4 +1,4 @@
-# kathrinegger.com (kathrinegger-com)
+# misseuph.com (misseuph-com)
 
 Portfolio & Shop
 

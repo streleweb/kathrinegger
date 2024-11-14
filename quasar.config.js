@@ -60,7 +60,7 @@ module.exports = configure(function (/* ctx */) {
         node: 'node16'
       },
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
@@ -95,8 +95,9 @@ module.exports = configure(function (/* ctx */) {
     framework: {
       config: {
         brand:{
-          primary: '#E7D6AC',
-          secondary: '#520121', //#660708
+          // primary: '#E7D6AC',
+          // secondary: '#520121', //#660708
+          // accent: '#FFE066',
         }
       },
 
@@ -111,7 +112,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['Notify']
+      plugins: ['Notify', 'Meta']
     },
 
     // animations: 'all', // --- includes all animations
@@ -200,7 +201,7 @@ module.exports = configure(function (/* ctx */) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'kathrinegger-com'
+        appId: 'misseuph-com'
       }
     },
 

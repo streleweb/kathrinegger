@@ -22,14 +22,19 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/ShopPage.vue'), // SSR
       },
       {
-        path: 'blog',
-        name: 'blog',
-        component: () => import('pages/BlogPage.vue'), // SSR
+        path: 'gallerie',
+        name: 'gallery',
+        component: () => import('pages/GalleryPage.vue'), // SSR
       },
       {
         path: 'contact',
         name: 'contact',
         component: () => import('pages/ContactPage.vue'), // SSR
+      },
+      {
+        path: 'samples',
+        name: 'audiosamples',
+        component: () => import('pages/AudioSamplePage.vue'), // SSR
       },
     ],
   },

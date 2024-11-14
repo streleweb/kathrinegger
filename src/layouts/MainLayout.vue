@@ -11,24 +11,25 @@ function toggleRightDrawer() {
 <template>
   <q-layout view="hhr lpR ffr">
 
-    <q-header class="bg-secondary header-sizing full-width flex text-primary items-center">
-      <q-toolbar class="bg-secondary">
+
+    <q-header class="bg-transparent header-sizing full-width flex text-primary items-center">
+      <q-toolbar class="bg-transparent">
         <q-toolbar-title class="fontsize-toolbartitle text-primary">
           <div id="branding" @click="$router.push({name: 'home'})" style="cursor: pointer;">
-            <q-avatar>
-              <q-img src="icons/logo.png" class="logosize"/>
-            </q-avatar>
-          kathrinegger
+            <img src="icons/logo-white.svg" id="logo" />
+            <div>misseuph</div>
           </div>
 
         </q-toolbar-title>
 
+
+
         <!-- Menu items on larger than mobile -->
         <q-tabs no-caps class="gt-sm q-mr-lg">
-          <q-tab class="fontsize16" name="shop" label="Shop"/>
-          <q-tab class="fontsize16" name="aboutme" label="About Me" />
-          <q-tab class="fontsize16" name="blog" label="Mein Blog" />
-          <q-tab class="fontsize16" name="gallerie" label="Gallerie" />
+          <q-tab @click="$router.push({name: 'home'})" class="fontsize16" name="shop" label="Shop"/>
+          <q-tab @click="$router.push({name: 'about'})" class="fontsize16" name="about" label="Über Mich" />
+          <q-tab @click="$router.push({name: 'contact'})" class="fontsize16" name="contact" label="Kontakt" />
+          <q-tab @click="$router.push({name: 'gallery'})" class="fontsize16" name="gallery" label="Gallerie" />
         </q-tabs>
 
         <q-btn class="lt-md" dense flat icon="menu" @click="toggleRightDrawer" />
@@ -52,7 +53,7 @@ function toggleRightDrawer() {
               </q-item-section>
 
               <q-item-section class="flex-center">
-                <div>About Me</div>
+                <div>Über mich</div>
               </q-item-section>
             </q-item>
 
@@ -62,7 +63,7 @@ function toggleRightDrawer() {
               </q-item-section>
 
               <q-item-section class="flex-center">
-                Shop
+                Bestellen
               </q-item-section>
             </q-item>
 
@@ -109,16 +110,25 @@ function toggleRightDrawer() {
 
 <style scoped lang="scss">
 
+#branding{
+  display: flex;
+  align-items: center;
+}
+
+#logo{
+  height: 56px;
+}
+
 .header-sizing{
   @media(min-width: 601px) {
     height: 65px;
   }
   @media (min-width: 768px) {
-    height: 8.7vh;
+    height: 80px;
   }
 
   @media (min-width: 1400px){
-    height: 11.2vh;
+    height: 100px;
   }
 }
 

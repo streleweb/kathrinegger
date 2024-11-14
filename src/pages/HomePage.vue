@@ -1,20 +1,19 @@
 <template>
   <q-page>
     <section class="hero">
-      <q-img no-spinner :src="currentImageUrl" class="hero-image"></q-img>
+        <q-img no-spinner :src="currentImageUrl" class="hero-image"></q-img>
         <div class="hero-text">
-          <div>
-            <div class="overlay"></div>
-            <div class="overlay2"></div>
+
+          <div id="name-and-description">
             <h1 class="name text-primary">Kathrin Egger</h1>
-            <h2 class="description text-accent agrandir-thin-italic">Music, Art & Photography</h2>
+            <h2 class="description text-accent agrandir-thin-italic">Musikerin & Musikvermittlerin, Pädagogin & Authorin</h2>
           </div>
 
-        <div class="hero-icons full-width row no-wrap justify-center q-gutter-x-md lt-sm">
+          <div class="hero-icons full-width row no-wrap justify-center q-gutter-x-md">
             <a href="https://www.youtube.com/@kathrinegger6575">
               <q-btn color="primary"
                 icon="img:icons/youtube.svg"
-                size="10px"
+                size="14px"
                 round
                 unelevated
                 outline
@@ -23,7 +22,7 @@
             <a href="https://www.facebook.com/EgGiIiIi">
               <q-btn color="primary"
                   icon="img:icons/fb.svg"
-                  size="10px"
+                  size="14px"
                   round
                   unelevated
                   outline
@@ -32,22 +31,31 @@
             <a href="https://instagram.com/eupheggi">
               <q-btn color="primary"
                 icon="img:icons/insta.svg"
-                size="10px"
+                size="14px"
                 round
                 unelevated
                 outline
               />
             </a>
         </div>
-        <button class="button-background-move" role="button">Contact Me</button>
+
+        </div>
 
 
-      </div>
+      <div class="order-button">
+          <button class="button-55 text-secondary" role="button">Kinderbuch bestellen</button>
+          <!-- <q-btn color="accent" text-color="secondary" icon="shopping_cart" label="" @click="onClick" /> -->
+        </div>
     </section>
+
 
     <section id="carousel">
       <div id="carousel-container">
       <q-card>
+        <h1 class="bg-secondary q-pt-lg q-pl-xl">
+          <div style="opacity: 50%;">
+          Projekte
+        </div></h1>
         <q-carousel
           v-model="currentSlide"
           animated
@@ -74,21 +82,17 @@
       </q-card>
     </div>
     </section>
-
-
-
   </q-page>
 </template>
 
 <script setup lang="ts">
   import { ref, onMounted } from 'vue';
 
-
   const IMGURLS =
     [
       // 'images/kathrin_hero_eyespop.webp',
       // 'images/kathrin_blume.webp',
-      'images/kathrin_hero.png',
+      'images/kathrin_euphonium.webp',
     ];
   const currentImageIndex = ref(0);
   const currentImageUrl = ref(IMGURLS[currentImageIndex.value]);
@@ -96,13 +100,13 @@
   const slides = [
     {
       name: 'one',
-      title: 'One',
-      description: 'asdkj asdkfj asldkfjj AJl kdjf safkjasdlfkjasfl kjsadf salkfj df'
+      title: 'Miss Euph',
+      description: 'Mein erstes Hörbuch ist jetzt erhältlich! Begib dich auf die Reise mit Miss Euph!'
     },
     {
       name: 'two',
-      title: 'Onsadfsfe',
-      description: 'asdkj asdkfj asldkfjj AJl kdjf safkjasdlfkjasfl kjsadf salkfj df'
+      title: 'Konzert in Eppan',
+      description: 'Am 01.01.2024 lade ich herzlich ein zu meinem Konzert. Gespielt wird Dudeldu von Mammel.'
     },
     {
       name: 'three',
@@ -124,19 +128,32 @@
 
 
 <style lang="scss" scoped>
+$xs: 599.99px;
+$sm: 600px;
+$md: 1024px;
+$lg: 1440px;
+$xl: 1870px;
+$bottom-space: 280px;
+$tablet-min: 801px;
+$tablet-max: 1024px;
 
 .hero {
   display: flex;
   position: relative;
   width: 100%;
+  height: calc(100vh - 50px);
   // background-image: linear-gradient(to left,  rgba(0, 0, 0, 0.535), rgba(25, 0, 0, 0.968));
 
-  @media (max-width: 767px) {
-    height: calc(100vh - 50px);
+  @media (min-width: 601px) {
+    height: calc(100vh - 65px);
   }
 
   @media (min-width: 768px) {
-    height: 91.3vh;
+    height: calc(100vh - 80px);
+  }
+
+  @media (min-width: 1400px) {
+    height: calc(100vh - 100px);
   }
 
   .hero-text {
@@ -145,200 +162,230 @@
     display: flex;
     flex-direction: column;
     white-space: nowrap;
+    text-wrap: wrap;
+    line-height: normal;
+
+    // background-rectangle
+    background-color: rgba(231, 214, 172, 0.1);
+    align-items: center;
+    justify-content: baseline;
+    width: 100%;
+    bottom: $bottom-space;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    #name-and-description{
+      max-width: 80%;
+    }
 
     h1 {
         font-size: 2.2rem;
-        line-height: 0.5;
+        line-height: 0.9;
         text-shadow: 1px 0px 1px rgba(255, 255, 255, 0.3);
         margin: 0;
       }
 
     h2 {
-      margin: 0.8rem 0 0 0;
+      margin: 4px 0 0 0;
       padding-left: 0.28rem;
-      font-size: 1rem;
-      line-height: 0.5;
+      font-size: 12px;
+      line-height: 0.9;
     }
 
     @media (min-width: 380px){
       h1 {
-        font-size: 3.2rem;
-        line-height: 0.5;
+        font-size: 34px;
+        line-height: 0.9;
         text-shadow: 1px 0px 1px rgba(255, 255, 255, 0.3);
         margin: 0;
       }
 
       h2 {
-        margin: 0.8rem 0 0 0;
+        margin: 6px 0 0 0;
+        line-height: 0.9;
         padding-left: 0.28rem;
-        font-size: 1.1rem;
-        line-height: 0.5;
+        font-size: 12px;
       }
     }
 
-
-    /* mobile */
-    @media (min-width: 0px) and (max-width: 600px) {
-      background-color: rgba(231, 214, 172, 0.1);
-      align-items: center;
-      justify-content: baseline;
-      width: 100%;
-      bottom: 35%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-    }
-
-    /* tablets */
-    @media (min-width: 601px) and (max-width: 1024px) {
-      width: 100%;
-      align-items: center;
-      bottom: 0;
-      right: 0;
-      height: 20%;
-      background-color: rgba(231, 214, 172, 0.1);
+    @media (min-width: 460px){
 
       h1{
-        font-size: 5rem;
-        text-shadow: 2px 2px 50px rgb(27, 2, 2);
+        font-size: 40px;
       }
-      h2{
-        font-size: 1.8rem;
-        text-shadow: 1px 0px 0px rgb(97, 16, 16);
+      h2 {
+        margin: 10px 0 0 0;
+        line-height: 0.9;
+        padding-left: 0.28rem;
+        font-size: 16px;
+      }
+    }
+    }
+
+    @media (min-width: 500px){
+      h1 {
+        font-size: 48px;
+        line-height: 0.9;
+        text-shadow: 1px 0px 1px rgba(255, 255, 255, 0.3);
+        margin: 0;
+      }
+
+      h2 {
+        margin: 6px 0 0 0;
+        line-height: 0.9;
+        padding-left: 0.28rem;
+        font-size: 16px;
       }
     }
 
-    /* desktop */
-    @media (min-width: 1025px) {
-      width: 100%;
-      align-items: flex-end;
-      justify-content: center;
-      padding-left: 8rem;
-      bottom: 5%;
-      right: 0;
-      left: 0;
-      height: 30%;
-      background-color: rgba(231, 214, 172, 0.1);
-      /*background-color: rgba(231, 214, 172, 1);*/
-      background-image: linear-gradient(to right,  rgba(58, 42, 1, 0.15), rgba(0, 0, 0, 0));
 
-      h1{
-        padding-right: 10rem;
-        line-height: 130%;
-        font-size: 6rem;
-        text-shadow: 2px 2px 50px rgb(27, 2, 2);
-      }
-      h2{
-        font-size: 2.8rem;
-        padding-right: 2rem;
-        text-align: end;
-        text-shadow: 1px 0px 0px rgb(97, 16, 16);
-        background-image: linear-gradient(to left,  rgba(231, 214, 172, 0.141), rgba(0, 0, 0, 0));
-      }
-    }
+     @media (min-width: $tablet-min) { //801px
+       width: 100%;
+       align-items: center;
+       justify-content: center;
+      //  background-color: rgba(231, 214, 172, 0.1);
+       h1{
+         font-size: 58px;
+         text-shadow: 2px 2px 50px rgb(27, 2, 2);
+       }
+       h2{
+         padding-left: 24px;
+         margin-top: 14px;
+         font-size: 1.8rem;
+         text-shadow: 1px 0px 0px rgb(97, 16, 16);
+       }
+     }
 
-    @media(min-width: 1400px){
-      background-image: linear-gradient(to right,  rgba(255, 0, 0, 0.15), rgba(45, 2, 2, 0.192));
-    }
+     @media (min-width: $lg) {
+       width: 100%;
+       align-items: start;
+       justify-content: center;
+       bottom: 0px;
+       padding-left: 48px;
+
+     }
   }
-
 
   .hero-image {
-    align-self: flex-start;
     position: absolute;
-    top: 0px;
-    left: 0;
-    height: 50%;
     width: 100%;
     object-fit: cover;
-    opacity: 85%;
-    transition: opacity 5s ease-in-out;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 375px;
 
-    @media(min-width: 601px){
-      height:79%;
-      object-fit: contain;
+    @media (min-width: 750px){
+      width: 90%;
     }
 
-    @media (min-width: 1024px) {
-      height:90%;
-      left: 0;
+    @media (min-width: 800px){
+      width: 80%;
     }
 
-    @media(min-width: 1400px){
-      left: -200px;
-      object-fit: contain;
-      width:100%;
-
+    @media (min-width: 900px){
+      width: 70%;
     }
-  }
+
+    @media (min-width: 1100px){
+      width: 50%;
+    }
+
+    @media (min-width: $lg){
+      width: 45%;
+      bottom: 360px;
+      opacity: 80%;
+    }
+
+    @media (min-width: $xl){
+      width: 40%;
+    }
+
+  } //HERE
+  //TODO
+
 
   .hero-icons{
     position: absolute;
-    top: 48px;
+    top: 72px;
     left: -16px;
-  }
-}
 
-.overlay{
-  @media (min-width: 1400px){
-        position: absolute;
-        top:-51%;
-        right: 0;
-        height: 51%;
-        width: 100%;
-        background-image: linear-gradient(to right,  rgba(255, 0, 0, 0), rgba(45, 2, 2, 0.192));
-        z-index: 0;
+    @media (min-width: 460px){
+      top: 80px;
+    }
+
+    @media (min-width: 500px){
+      top: 84px;
+    }
   }
-}
+
+  .order-button{
+    position: absolute;
+    bottom: 128px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    @media (min-width: $tablet-min){
+
+
+  }
+
+} // END HERO
+
+// .overlay{
+//   @media (min-width: 1400px){
+//         position: absolute;
+//         top:-30%;
+//         right: 0;
+//         height: 30%;
+//         width: 100%;
+//         background-image: linear-gradient(to right,  rgba(255, 0, 0, 0), rgba(45, 2, 2, 0.192));
+//         z-index: 0;
+//   }
+// }
 
 .carousel-text-container{
   max-width: 65%;
 }
 
-/* cta btn */
-
-.button-background-move {
-  position: absolute !important;
-  top: 160px;
-  color: white;
-  left: 50%;
-  transform: translate(-50%, 0 );
-  font-size: 16px;
-  letter-spacing: 4px;
-  padding: 16px 32px 16px;
-  outline: 0;
-  border: 1px solid white;
+.button-55 {
+  align-self: center;
+  background-color: #F5F3F4;;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
   cursor: pointer;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 
-.button-background-move:after {
-  content: "";
-  background-color: rgba($color: #c0c0c0, $alpha: 0.15);
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
-  transition: 0.2s;
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
 }
 
-.button-background-move:hover:after {
-  top: 0px;
-  left: 0px;
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
-
-@media (min-width: 768px) {
-  .button-background-move {
-    padding: 13px 50px 13px;
-  }
-}
-
-
 
 
 </style>
