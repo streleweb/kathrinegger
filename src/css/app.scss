@@ -55,6 +55,10 @@
   font-family: agrandir-grandheavy;
 }
 
+.agrandir-narrow{
+  font-family: agrandir-narrow;
+}
+
 /* GLOBAL CSS*/
 body {
   // background-color: #520121; /* #660708 */
@@ -64,6 +68,10 @@ body {
   background-attachment: fixed;
   background-size: cover;
   overflow-x: hidden; /* Hide scrollbars */
+}
+
+.text-headline{
+  font-size: 3rem;
 }
 
 

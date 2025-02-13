@@ -43,7 +43,7 @@
 
 
       <div class="order-button">
-          <button class="button-55 text-secondary" role="button">Kinderbuch bestellen</button>
+          <button @click="$router.push({name: 'contact'})" class="button-55 text-secondary" role="button">Kinderbuch bestellen</button>
           <!-- <q-btn color="accent" text-color="secondary" icon="shopping_cart" label="" @click="onClick" /> -->
         </div>
     </section>
@@ -72,12 +72,29 @@
           class="bg-secondary"
           navigation-position="left"
         >
-            <q-carousel-slide v-for="slide in slides" :key="slide.name" :name="slide.name" class="flex flex-center">
-              <div class="carousel-text-container">
-                <h3 class="text-white q-my-sm">{{ slide.title }}</h3>
-                <div class="text-grey-5">{{ slide.description }}</div>
-              </div>
-            </q-carousel-slide>
+        <q-carousel-slide
+  v-for="slide in slides"
+  :key="slide.name"
+  :name="slide.name"
+  class="relative w-full h-full flex flex-center overflow-hidden"
+  @click="$router.push(slide.topic)"
+>
+  <!-- Image with Opacity -->
+  <img
+    :src="slide.url"
+    alt="Slide image"
+    class="absolute inset-0 w-full h-full object-cover"
+    style="opacity:25%; height:100%;
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+    "/>
+
+  <!-- Content -->
+  <div class="carousel-text-container relative z-10 text-center p-4">
+    <h3 class="text-white q-my-sm">{{ slide.title }}</h3>
+    <div class="text-grey-5">{{ slide.description }}</div>
+  </div>
+</q-carousel-slide>
         </q-carousel>
       </q-card>
     </div>
@@ -86,7 +103,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted} from 'vue';
 
   const IMGURLS =
     [
@@ -98,22 +115,26 @@
   const currentImageUrl = ref(IMGURLS[currentImageIndex.value]);
   const currentSlide = ref('one');
   const slides = [
-    {
-      name: 'one',
-      title: 'Miss Euph',
-      description: 'Mein erstes Hörbuch ist jetzt erhältlich! Begib dich auf die Reise mit Miss Euph!'
-    },
-    {
-      name: 'two',
-      title: 'Konzert in Eppan',
-      description: 'Am 01.01.2024 lade ich herzlich ein zu meinem Konzert. Gespielt wird Dudeldu von Mammel.'
-    },
-    {
-      name: 'three',
-      title: 'Threee',
-      description: 'asdkj asdkfj asldkfjj AJl kdjf safkjasdlfkjasfl kjsadf salkfj df'
-    },
-  ]
+  {
+    name: 'one',
+    title: 'Miss Euph',
+    topic: 'misseuph',
+    description: 'Mein erstes Hörbuch ist jetzt erhältlich! Begib dich auf die Reise mit Miss Euph!',
+    url: '/images/homepage/misseuph.webp'
+  },
+  {
+    name: 'two',
+    title: 'Shakespeare in Love',
+    description: 'Interaktive Theatereinführung der Freilichtspiele 2024 zum Stück "Shakespeare in Love"',
+    url: '/images/homepage/shakespeare.webp'
+  },
+  {
+    name: 'three',
+    title: '',
+    description: '',
+    url: '/images/homepage/klangtraum.webp'
+  }
+];
 
 
   function updateHeroImg(): void {
@@ -136,6 +157,19 @@ $xl: 1870px;
 $bottom-space: 280px;
 $tablet-min: 801px;
 $tablet-max: 1024px;
+
+
+.q-carousel-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: 0;
+}
+
 
 .hero {
   display: flex;

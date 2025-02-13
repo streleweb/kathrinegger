@@ -17,13 +17,18 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/AboutPage.vue'), // SSR
       },
       {
+        path: 'misseuph',
+        name: 'misseuph',
+        component: () => import('pages/MissEuphPage.vue'), // SSR
+      },
+      {
         path: 'shop',
         name: 'shop',
         component: () => import('pages/ShopPage.vue'), // SSR
       },
       {
-        path: 'gallerie',
-        name: 'gallery',
+        path: 'medien',
+        name: 'medien',
         component: () => import('pages/GalleryPage.vue'), // SSR
       },
       {
