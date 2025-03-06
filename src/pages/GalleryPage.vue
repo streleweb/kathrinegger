@@ -7,7 +7,6 @@
       infinite
       swipeable
       arrows
-      navigation
     >
       <q-carousel-slide
         v-for="(image, index) in images"

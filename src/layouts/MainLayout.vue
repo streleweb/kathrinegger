@@ -26,10 +26,9 @@ function toggleRightDrawer() {
 
         <!-- Menu items on larger than mobile -->
         <q-tabs no-caps class="gt-sm q-mr-lg">
-          <q-tab @click="$router.push({name: 'home'})" class="fontsize16" name="shop" label="Shop"/>
-          <q-tab @click="$router.push({name: 'about'})" class="fontsize16" name="about" label="Über Mich" />
-          <q-tab @click="$router.push({name: 'contact'})" class="fontsize16" name="contact" label="Kontakt" />
-          <q-tab @click="$router.push({name: 'medien'})" class="fontsize16" name="gallery" label="Medien" />
+          <q-tab @click="$router.push({name: 'about'})" class="fontsize16" name="about" label="über mich" />
+          <q-tab @click="$router.push({name: 'contact'})" class="fontsize16" name="contact" label="kontakt" />
+          <q-tab @click="$router.push({name: 'medien'})" class="fontsize16" name="gallery" label="medien" />
         </q-tabs>
 
         <q-btn class="lt-md" dense flat icon="menu" @click="toggleRightDrawer" />

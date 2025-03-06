@@ -60,6 +60,11 @@
 }
 
 /* GLOBAL CSS*/
+
+::selection{
+  background: #000000;
+  color: #fff;
+}
 body {
   // background-color: #520121; /* #660708 */
   background-color: #310C0F;

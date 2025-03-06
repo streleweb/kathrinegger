@@ -37,6 +37,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/ContactPage.vue'), // SSR
       },
       {
+        path: 'bestellen',
+        name: 'bestellen',
+        component: () => import('pages/BestellenPage.vue'), // SSR
+      },
+      {
         path: 'samples',
         name: 'audiosamples',
         component: () => import('pages/AudioSamplePage.vue'), // SSR

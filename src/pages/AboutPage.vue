@@ -12,7 +12,7 @@
         <!-- Image Section -->
         <div class="image-container">
           <img
-            src="public/images/kathrin_aboutpage.png"
+            src="/images/kathrin_aboutpage.png"
             alt="Kathrin with Euphonium"
             class="background-image"
           />
@@ -51,7 +51,10 @@ export default defineComponent({});
 <style scoped>
 /* Main container */
 .content-container {
-  padding: 20px;
+  padding: 32px;
+  @media (min-width: 768px){
+    padding:80px;
+  }
 }
 
 .text-and-image {

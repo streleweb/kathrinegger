@@ -43,7 +43,7 @@
 
 
       <div class="order-button">
-          <button @click="$router.push({name: 'contact'})" class="button-55 text-secondary" role="button">Kinderbuch bestellen</button>
+          <button @click="$router.push({name: 'bestellen'})" class="button-55 text-secondary" role="button">Kinderbuch bestellen</button>
           <!-- <q-btn color="accent" text-color="secondary" icon="shopping_cart" label="" @click="onClick" /> -->
         </div>
     </section>
@@ -52,10 +52,10 @@
     <section id="carousel">
       <div id="carousel-container">
       <q-card>
-        <h1 class="bg-secondary q-pt-lg q-pl-xl">
-          <div style="opacity: 50%;">
+        <!-- <h1 class="bg-secondary q-pt-lg q-pl-xl">
+          <div style="opacity: 1;">
           Projekte
-        </div></h1>
+        </div></h1> -->
         <q-carousel
           v-model="currentSlide"
           animated
@@ -69,7 +69,7 @@
           swipeable
           prev-icon="img:icons/up.png"
           next-icon="img:icons/down.png"
-          class="bg-secondary"
+          class="bg-secondary cursor-pointer"
           navigation-position="left"
         >
         <q-carousel-slide
@@ -84,15 +84,15 @@
     :src="slide.url"
     alt="Slide image"
     class="absolute inset-0 w-full h-full object-cover"
-    style="opacity:25%; height:100%;
+    style="opacity:60%; height:100%;
     -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
     mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
     "/>
 
   <!-- Content -->
-  <div class="carousel-text-container relative z-10 text-center p-4">
-    <h3 class="text-white q-my-sm">{{ slide.title }}</h3>
-    <div class="text-grey-5">{{ slide.description }}</div>
+  <div class="carousel-text-container relative z-10 p-4">
+    <h3 id="project-title" class="text-white q-my-sm">{{ slide.title }}</h3>
+    <div id="project-description" class="text-grey-3">{{ slide.description }}</div>
   </div>
 </q-carousel-slide>
         </q-carousel>
@@ -159,16 +159,16 @@ $tablet-min: 801px;
 $tablet-max: 1024px;
 
 
-.q-carousel-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-  z-index: 0;
-}
+// .q-carousel-slide::before {
+//   content: "";
+//   position: absolute;
+//   inset: 0;
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   opacity: 0.5;
+//   z-index: 0;
+// }
 
 
 .hero {
@@ -378,7 +378,38 @@ $tablet-max: 1024px;
 // }
 
 .carousel-text-container{
-  max-width: 65%;
+  max-width: 50%;
+  z-index: 1;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    text-wrap: wrap;
+    align-items: center;
+    line-height: normal;
+    margin-top: 150px;
+    // background-rectangle
+    // background-color: rgba(0, 0, 0, 0.589);
+    justify-content: center;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+
+      #project-title{
+          font-size: 38px;
+        @media (min-width: 768px) {
+          font-size: 48px;
+        }
+      }
+      #project-description{
+        font-size: 13px;
+        @media (min-width: 768px) {
+          font-size: 17px;
+        }
+      }
+
 }
 
 .button-55 {
