@@ -22,6 +22,21 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/MissEuphPage.vue'), // SSR
       },
       {
+        path: 'shakespeare',
+        name: 'shakespeare',
+        component: () => import('pages/ShakespearePage.vue'), // SSR
+      },
+      {
+        path: 'abenteuermusikkappelle',
+        name: 'abenteuermusikkappelle',
+        component: () => import('pages/AbenteuerMusikkappellePage.vue'), // SSR
+      },
+      {
+        path: 'klangtraum',
+        name: 'klangtraum',
+        component: () => import('pages/KlangtraumPage.vue'), // SSR
+      },
+      {
         path: 'shop',
         name: 'shop',
         component: () => import('pages/ShopPage.vue'), // SSR

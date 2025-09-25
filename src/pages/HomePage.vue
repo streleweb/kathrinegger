@@ -84,7 +84,7 @@
     :src="slide.url"
     alt="Slide image"
     class="absolute inset-0 w-full h-full object-cover"
-    style="opacity:60%; height:100%;
+    style="opacity:40%; height:100%;
     -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
     mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
     "/>
@@ -125,14 +125,23 @@
   {
     name: 'two',
     title: 'Shakespeare in Love',
+    topic: 'shakespeare',
     description: 'Interaktive Theatereinführung der Freilichtspiele 2024 zum Stück "Shakespeare in Love"',
     url: '/images/homepage/shakespeare.webp'
   },
   {
     name: 'three',
-    title: '',
+    title: 'Klangtraum',
+    topic: 'klangtraum',
     description: '',
     url: '/images/homepage/klangtraum.webp'
+  },
+  {
+    name: 'four',
+    title: 'AbenteuerMusikkappelle',
+    topic: 'abenteuermusikkappelle',
+    description: '',
+    url: '/images/abenteuermusikkappelle/abenteuer-musikkappelle.jpg'
   }
 ];
 
@@ -389,8 +398,7 @@ $tablet-max: 1024px;
     align-items: center;
     line-height: normal;
     margin-top: 150px;
-    // background-rectangle
-    // background-color: rgba(0, 0, 0, 0.589);
+    // background: linear-gradient(90deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(41, 0, 16, 1) 80%, rgba(0, 0, 0, 0) 100%);
     justify-content: center;
     width: 100%;
     left: 50%;

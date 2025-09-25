@@ -28,7 +28,7 @@ function toggleRightDrawer() {
         <q-tabs no-caps class="gt-sm q-mr-lg">
           <q-tab @click="$router.push({name: 'about'})" class="fontsize16" name="about" label="über mich" />
           <q-tab @click="$router.push({name: 'contact'})" class="fontsize16" name="contact" label="kontakt" />
-          <q-tab @click="$router.push({name: 'medien'})" class="fontsize16" name="gallery" label="medien" />
+          <q-tab @click="$router.push({name: 'medien'})" class="fontsize16" name="medien" label="medien" />
         </q-tabs>
 
         <q-btn class="lt-md" dense flat icon="menu" @click="toggleRightDrawer" />
@@ -56,7 +56,7 @@ function toggleRightDrawer() {
               </q-item-section>
             </q-item>
 
-            <q-item active clickable @click="$router.push({ name: 'shop'})" v-ripple class="q-py-xl full-width">
+            <q-item active clickable @click="$router.push({ name: 'bestellen'})" v-ripple class="q-py-xl full-width">
               <q-item-section avatar class="hide-on-small">
                 <q-icon name="shop" />
               </q-item-section>
@@ -66,7 +66,7 @@ function toggleRightDrawer() {
               </q-item-section>
             </q-item>
 
-            <q-item clickable @click="$router.push({ name: 'gallery'})" v-ripple class="q-py-xl full-width">
+            <q-item clickable @click="$router.push({ name: 'medien'})" v-ripple class="q-py-xl full-width">
               <q-item-section avatar class="hide-on-small">
                 <q-icon name="image" />
               </q-item-section>

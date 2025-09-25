@@ -96,6 +96,17 @@
         />
 
         <q-input
+          v-model="empfaengercodex"
+          label="Empfängercodex"
+          type="text"
+          filled
+          stack-label
+          maxlength="16"
+          placeholder="Optionalfeld. 7 Stelliger Code"
+          :rules="[val => !val || /^[A-Z0-9]{11,16}$/.test(val) || 'Ungültige Steuernummer']"
+        />
+
+        <q-input
           v-model="mwst"
           label="Mwst."
           type="text"
@@ -131,6 +142,7 @@ export default defineComponent({
     const steuernummer = ref('');
     const mwst = ref('');
     const nachricht = ref('');
+    const empfaengercodex = ref('');
 
     const onSubmit = () => {
       if (vorname.value && nachname.value && email.value && nachricht.value) {
@@ -142,6 +154,7 @@ export default defineComponent({
           steuernummer: steuernummer.value,
           mwst: mwst.value,
           nachricht: nachricht.value,
+          empfaengercodex: empfaengercodex.value
         };
 
         emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
@@ -176,6 +189,7 @@ export default defineComponent({
       steuernummer.value = '';
       mwst.value = '';
       nachricht.value = '';
+      empfaengercodex.value = ''
     };
 
     return {
@@ -186,6 +200,7 @@ export default defineComponent({
       steuernummer,
       mwst,
       nachricht,
+      empfaengercodex,
       onSubmit,
       onReset,
     };
