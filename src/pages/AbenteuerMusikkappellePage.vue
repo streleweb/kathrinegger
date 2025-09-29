@@ -13,7 +13,7 @@
 
         <div class="col text-primary" style="text-align: justify;">
 
-          <h6>Gemeinsam mit Veronika Prünster und in Zusammenarbeit mit der Bürgerkapelle Lana haben wir das Projekt Abenteuer Musikapelle ins Leben gerufen. Eröffnet wird das Projekt mit einem kurzen, interaktiven Theaterstück, bei dem die Kinder alle Instrumente der Musikapelle hören und sehen dürfen. In mehreren Workshops lernen die Kinder alle Instrumente ausführlich kennen und werden zu „Experten“. Das Projekt wird abgerundet durch ein interaktives Familienkonzert, bei welchem die Kinder gemeinsam mit „Rita Dando“ den mysteriösen Fall der Bürgerkapelle Lana lösen. </h6>
+          <h6>Gemeinsam mit Veronika Prünster und in Zusammenarbeit mit der Bürgerkapelle Lana haben wir das Projekt Abenteuer Musikkapelle ins Leben gerufen. Eröffnet wird das Projekt mit einem kurzen, interaktiven Theaterstück, bei dem die Kinder alle Instrumente der Musikapelle hören und sehen dürfen. In mehreren Workshops lernen die Kinder alle Instrumente ausführlich kennen und werden zu „Experten“. Das Projekt wird abgerundet durch ein interaktives Familienkonzert, bei welchem die Kinder gemeinsam mit „Rita Dando“ den mysteriösen Fall der Bürgerkapelle Lana lösen. </h6>
         </div>
       </div>
       <div class="row lt-md text-white q-mx-lg-lg" style="max-width: 80%; margin: auto;">
