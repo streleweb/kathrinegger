@@ -131,17 +131,17 @@
   },
   {
     name: 'three',
-    title: 'Klangträume',
-    topic: 'klangtraum',
-    description: '',
-    url: '/images/homepage/klangtraum.webp'
+    title: 'Klang(T)räume',
+    topic: 'klangtraeume',
+    description: 'Eine musikalische Reise quer durch die Traumwelt. ',
+    url: '/public/images/klangtraeume/klangtraeume.webp'
   },
   {
     name: 'four',
     title: 'Abenteuer Musikkappelle',
     topic: 'abenteuermusikkappelle',
     description: 'Musikkapellen-Workshop und interaktives Theater für Kinder',
-    url: '/images/abenteuermusikkappelle/abenteuer-musikkappelle.jpg'
+    url: '/images/abenteuermusikkappelle/abenteuer3.webp'
   }
 ];
 

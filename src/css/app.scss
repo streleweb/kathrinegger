@@ -166,7 +166,30 @@ h2 {
    }
  }
 
- @media (min-width: 1400) {
+ /* 🌍 Global responsive text sizes */
+
+/* Default (mobile first) */
+.responsive-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .responsive-text {
+    font-size: 16px;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1280px) {
+  .responsive-text {
+    font-size: 20px;
+  }
+}
+
+
+ //@media (min-width: 1400) {
 
   //  h1{
   //    font-size: 5rem;
@@ -176,7 +199,7 @@ h2 {
   //    font-size: 1.8rem;
   //    text-shadow: 1px 0px 0px rgb(97, 16, 16);
   //  }
- }
+// }
 
 // #kathrin-canvas{
 //   position: absolute;

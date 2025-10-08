@@ -32,8 +32,8 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/AbenteuerMusikkappellePage.vue'), // SSR
       },
       {
-        path: 'klangtraum',
-        name: 'klangtraum',
+        path: 'klangtraeume',
+        name: 'klangtraeume',
         component: () => import('pages/KlangtraumPage.vue'), // SSR
       },
       {

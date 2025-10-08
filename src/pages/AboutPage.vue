@@ -14,7 +14,7 @@
         />
       </div>
 
-      <h6 class="text-body2" style="text-align: justify;">
+      <h6 class="text-body2" style="text-align: left;">
         <div class="q-mb-xl">
           Ich bin Kathrin, Musikerin, Pädagogin, Musikvermittlerin und Autorin.
         </div>
