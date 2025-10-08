@@ -2,7 +2,7 @@
   <q-page class="q-pa-none">
     <q-carousel
       v-model="currentSlide"
-      class="carousel-height transparent-bg"
+      class="carousel-fullscreen"
       animated
       infinite
       swipeable
@@ -22,15 +22,13 @@
 
       <!-- YouTube Video Slide -->
       <q-carousel-slide :name="images.length">
-        <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 90%;">
+        <div class="video-slide">
           <iframe
             src="https://www.youtube.com/embed/8l5bfHaXPBM?si=pt2qFxHT5OGhGoyw"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
           ></iframe>
         </div>
       </q-carousel-slide>
@@ -38,85 +36,70 @@
   </q-page>
 </template>
 
+<script setup>
+import { ref } from 'vue'
 
-<script>
-import { defineComponent, ref } from 'vue';
+const images = [
+  'images/kathrineuphonium1.webp',
+  'images/medien/Buchpräsentation1.webp',
+  'images/medien/Buchpräsentation2.webp',
+  'images/kathrineuphonium2.webp',
+  'images/kathrineuphonium3.webp',
+]
 
-export default defineComponent({
-  name: 'GalleryCarousel',
-  setup() {
-    // Reusable array of image paths
-    const images = [
-      'images/kathrineuphonium1.webp',
-      'images/medien/Buchpräsentation1.webp',
-      'images/medien/Buchpräsentation2.webp',
-      'images/kathrineuphonium2.webp',
-      'images/kathrineuphonium3.webp',
-      'images/kathrineuphonium4.webp',
-      'images/kathrineuphonium6.webp',
-      'images/kathrineuphonium9.webp',
-      'images/kathrineuphonium10.webp',
-      'images/kathrineuphonium11.webp',
-      'images/kathrineuphonium12.webp',
-      'images/kathrineuphonium13.webp',
-      'images/kathrineuphonium14.webp',
-      'images/kathrineuphonium15.webp',
-      'images/kathrineuphonium17.webp',
-      'images/kathrineuphonium18.webp',
-      'images/kathrineuphonium19.webp',
-    ];
-
-    // Carousel state
-    const currentSlide = ref(0);
-
-    return {
-      images,
-      currentSlide,
-    };
-  },
-});
+const currentSlide = ref(0)
 </script>
 
 <style scoped>
-/* Full height carousel */
-.carousel-height {
-  height: 100vh; /* Makes the carousel take full screen height */
+.carousel-fullscreen {
+  height: 100vh;
+  background-color: #000;
 }
 
-/* Transparent background for the carousel */
-.transparent-bg {
-  background-color: transparent !important; /* Ensures transparency */
-}
-
-/* Ensure the slide content covers the area without distortion and adds fade effect */
 .carousel-slide-content {
-  height: 100%; /* Matches parent container height */
-  background-size: contain; /* Ensures aspect ratio is preserved */
+  height: 100%;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* Mask for fade-out edges */
-  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: cover;
-
-  mask-image: radial-gradient(circle, rgb(0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: cover;
 }
 
-/* Style arrows and navigation dots (optional customization) */
-.q-carousel__control {
-  color: white; /* Customize arrow color */
+.video-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.q-carousel__navigation {
-  bottom: 10px; /* Position of navigation dots */
+.video-slide iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.q-carousel__navigation__dot {
-  background: white; /* Customize dot color */
+/* Carousel arrows always on top */
+:deep(.q-carousel__arrow) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease;
+  z-index: 1000 !important;
+  pointer-events: auto !important; /* ensures arrows are clickable above iframe */
 }
+
+:deep(.q-carousel__arrow:hover) {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+:deep(.q-carousel__arrow--left) { left: 16px !important; }
+:deep(.q-carousel__arrow--right) { right: 16px !important; }
 </style>
