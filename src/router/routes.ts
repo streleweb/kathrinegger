@@ -17,6 +17,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/AboutPage.vue'), // SSR
       },
       {
+        path: 'audiodownloads',
+        name: 'audiodownloads',
+        component: () => import('pages/Mp3Page.vue'), // SSR
+      },
+      {
         path: 'misseuph',
         name: 'misseuph',
         component: () => import('pages/MissEuphPage.vue'), // SSR
