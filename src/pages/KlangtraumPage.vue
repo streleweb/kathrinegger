@@ -54,9 +54,9 @@ import { ref } from 'vue'
 
 const currentSlide = ref('one')
 const slides = [
-  { name: 'one', url: '/public/images/klangtraeume/klangtraeume-quer.webp' },
-  { name: 'three', url: '/public/images/klangtraeume/klangtraeume-stage.webp' },
-  { name: 'four', url: '/public/images/klangtraeume/klangtraeume.webp' },
+  { name: 'one', url: '/images/klangtraeume/klangtraeume-quer.webp' },
+  { name: 'three', url: '/images/klangtraeume/klangtraeume-stage.webp' },
+  { name: 'four', url: '/images/klangtraeume/klangtraeume.webp' },
 ]
 </script>
 

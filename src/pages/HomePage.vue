@@ -134,7 +134,7 @@
     title: 'Klang(T)räume',
     topic: 'klangtraeume',
     description: 'Eine musikalische Reise quer durch die Traumwelt. ',
-    url: '/public/images/klangtraeume/klangtraeume.webp'
+    url: '/images/klangtraeume/klangtraeume.webp'
   },
   {
     name: 'four',

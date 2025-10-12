@@ -62,16 +62,16 @@ import { ref } from 'vue'
 
 const currentSlide = ref('one')
 const slides = [
-  { name: 'one', url: '/public/images/abenteuermusikkappelle/abenteuer3.webp' },
-  { name: 'two', url: '/public/images/abenteuermusikkappelle/abenteuer2.webp' },
-  { name: 'three', url: '/public/images/abenteuermusikkappelle/abenteuer1.webp' },
-  { name: 'four', url: '/public/images/abenteuermusikkappelle/abenteuer7.webp' },
-  { name: 'five', url: '/public/images/abenteuermusikkappelle/abenteuer8.webp' },
-  { name: 'six', url: '/public/images/abenteuermusikkappelle/abenteuer9.webp' },
-  { name: 'seven', url: '/public/images/abenteuermusikkappelle/abenteuer10.webp' },
-  { name: 'eight', url: '/public/images/abenteuermusikkappelle/abenteuer4.webp' },
-  { name: 'nine', url: '/public/images/abenteuermusikkappelle/abenteuer5.webp' },
-  { name: 'ten', url: '/public/images/abenteuermusikkappelle/abenteuer6.webp' },
+  { name: 'one', url: '/images/abenteuermusikkappelle/abenteuer3.webp' },
+  { name: 'two', url: '/images/abenteuermusikkappelle/abenteuer2.webp' },
+  { name: 'three', url: '/images/abenteuermusikkappelle/abenteuer1.webp' },
+  { name: 'four', url: '/images/abenteuermusikkappelle/abenteuer7.webp' },
+  { name: 'five', url: '/images/abenteuermusikkappelle/abenteuer8.webp' },
+  { name: 'six', url: '/images/abenteuermusikkappelle/abenteuer9.webp' },
+  { name: 'seven', url: '/images/abenteuermusikkappelle/abenteuer10.webp' },
+  { name: 'eight', url: '/images/abenteuermusikkappelle/abenteuer4.webp' },
+  { name: 'nine', url: '/images/abenteuermusikkappelle/abenteuer5.webp' },
+  { name: 'ten', url: '/images/abenteuermusikkappelle/abenteuer6.webp' },
 ]
 </script>
 

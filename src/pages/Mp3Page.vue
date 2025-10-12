@@ -52,18 +52,18 @@
 
 <script setup lang="ts">
 const audios = [
-  { title: 'Miss Euph - Wüste', src: '/public/audio/dummy1.mp3', img: '/public/images/misseuph/Wüste.webp' },
-  { title: 'Miss Euph - Berg', src: '/public/audio/dummy2.mp3', img: '/public/images/misseuph/berg.webp' },
-  { title: 'Miss Euph - Meer', src: '/public/audio/dummy3.mp3', img: '/public/images/misseuph/unterwasser.webp' },
-  { title: 'Miss Euph - Stadt', src: '/public/audio/dummy4.mp3', img: '/public/images/misseuph/Stadt.webp' },
-  { title: 'Miss Euph - Wald', src: '/public/audio/dummy5.mp3', img: '/public/images/misseuph/misseuph-im-wald.webp' },
-  { title: 'Miss Euph - Frühstück', src: '/public/audio/dummy6.mp3', img: '/public/images/misseuph/frühstück.webp' },
-  { title: 'Miss Euph - Haus', src: '/public/audio/dummy7.mp3', img: '/public/images/misseuph/haus.webp' },
-  { title: 'Miss Euph - Baliadu', src: '/public/audio/dummy8.mp3', img: '/public/images/misseuph/baliadu.webp' },
-  { title: 'Miss Euph - Kirschbaum', src: '/public/audio/dummy9.mp3', img: '/public/images/misseuph/Misseuph-unter-Kirschbaum.webp' },
-  { title: 'Miss Euph - Titelbild', src: '/public/audio/dummy10.mp3', img: '/public/images/misseuph/Miss-Euph-Titelbild.webp' },
-  { title: 'Miss Euph - Extra 1', src: '/public/audio/dummy11.mp3', img: '/public/images/misseuph/Wüste.webp' },
-  { title: 'Miss Euph - Extra 2', src: '/public/audio/dummy12.mp3', img: '/public/images/misseuph/berg.webp' },
+  { title: 'Miss Euph - Wüste', src: '/audio/dummy1.mp3', img: '/images/misseuph/Wüste.webp' },
+  { title: 'Miss Euph - Berg', src: '/audio/dummy2.mp3', img: '/images/misseuph/berg.webp' },
+  { title: 'Miss Euph - Meer', src: '/audio/dummy3.mp3', img: '/images/misseuph/unterwasser.webp' },
+  { title: 'Miss Euph - Stadt', src: '/audio/dummy4.mp3', img: '/images/misseuph/Stadt.webp' },
+  { title: 'Miss Euph - Wald', src: '/audio/dummy5.mp3', img: '/images/misseuph/misseuph-im-wald.webp' },
+  { title: 'Miss Euph - Frühstück', src: '/audio/dummy6.mp3', img: '/images/misseuph/frühstück.webp' },
+  { title: 'Miss Euph - Haus', src: '/audio/dummy7.mp3', img: '/images/misseuph/haus.webp' },
+  { title: 'Miss Euph - Baliadu', src: '/audio/dummy8.mp3', img: '/images/misseuph/baliadu.webp' },
+  { title: 'Miss Euph - Kirschbaum', src: '/audio/dummy9.mp3', img: '/images/misseuph/Misseuph-unter-Kirschbaum.webp' },
+  { title: 'Miss Euph - Titelbild', src: '/audio/dummy10.mp3', img: '/images/misseuph/Miss-Euph-Titelbild.webp' },
+  { title: 'Miss Euph - Extra 1', src: '/audio/dummy11.mp3', img: '/images/misseuph/Wüste.webp' },
+  { title: 'Miss Euph - Extra 2', src: '/audio/dummy12.mp3', img: '/images/misseuph/berg.webp' },
 ]
 </script>
 
