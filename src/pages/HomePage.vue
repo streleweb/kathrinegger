@@ -117,7 +117,7 @@
   const slides = [
   {
     name: 'one',
-    title: 'Miss Euph',
+    title: 'Die kleine Miss Euph',
     topic: 'misseuph',
     description: 'Mein erstes Hörbuch ist jetzt erhältlich! Begib dich auf die Reise mit Miss Euph!',
     url: '/images/homepage/misseuph.webp'

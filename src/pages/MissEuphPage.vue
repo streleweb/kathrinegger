@@ -4,7 +4,7 @@
       <div class="col-12 col-md-10 col-lg-8 text-center">
 
         <h1 class="text-primary q-my-lg">
-          Die kleine Misseuph - Hörbuch mit Musik
+          Die kleine Miss Euph - Hörbuch mit Musik
         </h1>
 
         <!-- Carousel -->
