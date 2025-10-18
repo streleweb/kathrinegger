@@ -14,7 +14,6 @@ export default configure(() => ({
   ],
 
   build: {
-    publicPath: '/',
     target: {
       browser: ['es2020', 'chrome87', 'firefox78', 'safari13.1']
     },
