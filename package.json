@@ -1,8 +1,9 @@
 {
-  "name": "kathrinegger-com",
+  "name": "misseuph",
   "version": "0.0.1",
-  "description": "Portfolio & Shop",
-  "productName": "kathrinegger.com",
+  "description": "Miss Euph",
+  "productName": "misseuph.com",
+  "homepage": "https://misseuph.com",
   "author": "streleweb@gmail.com",
   "private": true,
   "scripts": {

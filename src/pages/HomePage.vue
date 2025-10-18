@@ -107,8 +107,6 @@
 
   const IMGURLS =
     [
-      // 'images/kathrin_hero_eyespop.webp',
-      // 'images/kathrin_blume.webp',
       'images/kathrin_euphonium.webp',
     ];
   const currentImageIndex = ref(0);

@@ -52,18 +52,51 @@
 
 <script setup lang="ts">
 const audios = [
-  { title: 'Miss Euph - Wüste', src: '/audio/dummy1.mp3', img: '/images/misseuph/Wüste.webp' },
-  { title: 'Miss Euph - Berg', src: '/audio/dummy2.mp3', img: '/images/misseuph/berg.webp' },
-  { title: 'Miss Euph - Meer', src: '/audio/dummy3.mp3', img: '/images/misseuph/unterwasser.webp' },
-  { title: 'Miss Euph - Stadt', src: '/audio/dummy4.mp3', img: '/images/misseuph/Stadt.webp' },
-  { title: 'Miss Euph - Wald', src: '/audio/dummy5.mp3', img: '/images/misseuph/misseuph-im-wald.webp' },
-  { title: 'Miss Euph - Frühstück', src: '/audio/dummy6.mp3', img: '/images/misseuph/frühstück.webp' },
-  { title: 'Miss Euph - Haus', src: '/audio/dummy7.mp3', img: '/images/misseuph/haus.webp' },
-  { title: 'Miss Euph - Baliadu', src: '/audio/dummy8.mp3', img: '/images/misseuph/baliadu.webp' },
-  { title: 'Miss Euph - Kirschbaum', src: '/audio/dummy9.mp3', img: '/images/misseuph/Misseuph-unter-Kirschbaum.webp' },
-  { title: 'Miss Euph - Titelbild', src: '/audio/dummy10.mp3', img: '/images/misseuph/Miss-Euph-Titelbild.webp' },
-  { title: 'Miss Euph - Extra 1', src: '/audio/dummy11.mp3', img: '/images/misseuph/Wüste.webp' },
-  { title: 'Miss Euph - Extra 2', src: '/audio/dummy12.mp3', img: '/images/misseuph/berg.webp' },
+  {
+    title: 'Miss Euph - Traum',
+    src: '/audio/1Traum.mp3',
+    img: '/images/misseuph/traum.webp'
+  },
+  {
+    title: 'Miss Euph - Frühstück',
+    src: '/audio/2Frühstück.mp3',
+    img: '/images/misseuph/frühstück.webp'
+  },
+  {
+    title: 'Miss Euph - Echo',
+    src: '/audio/3Echo.mp3',
+    img: '/images/misseuph/berg.webp'
+  },
+  {
+    title: 'Miss Euph - Wüstentraum',
+    src: '/audio/4Wüstentraum.mp3',
+    img: '/images/misseuph/Wüste.webp'
+  },
+  {
+    title: 'Miss Euph - Unterwasserwelt',
+    src: '/audio/5Unterwasserwelt.mp3',
+    img: '/images/misseuph/unterwasser.webp'
+  },
+  {
+    title: 'Miss Euph - Stadt',
+    src: '/audio/6Stadt.mp3',
+    img: '/images/misseuph/Stadt.webp'
+  },
+  {
+    title: 'Miss Euph - Höhlenkummer',
+    src: '/audio/7Höhlenkummer.mp3',
+    img: '/images/misseuph/höhle.webp'
+  },
+  {
+    title: 'Miss Euph - Zuhause',
+    src: '/audio/8.Zuhause.mp3',
+    img: '/images/misseuph/haus.webp'
+  },
+  {
+    title: 'Miss Euph - Ganzes Hörbuch',
+    src: '/audio/GanzesHörbuch.mp3',
+    img: '/images/misseuph/Miss-Euph-Titelbild.webp'
+  }
 ]
 </script>
 
@@ -98,14 +131,14 @@ h1 {
 }
 .audio-thumb {
   width: 80px;
-  height: 80px; /* make square */
+  height: 80px;
   object-fit: cover;
   border-radius: 12px;
 }
 @media (min-width: 768px) {
   .audio-thumb {
     width: 100px;
-    height: 100px; /* square desktop */
+    height: 100px;
   }
 }
 
@@ -136,7 +169,7 @@ h1 {
 }
 
 .padded-download {
-  padding-top: 0.5rem; /* extra space on mobile */
+  padding-top: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -148,7 +181,6 @@ h1 {
   }
 }
 
-/* SPACING BETWEEN ITEMS */
 .audio-item + .audio-item {
   margin-top: 1rem;
 }
