@@ -50,7 +50,7 @@
 
           <q-input
             v-model="telefonnummer"
-            label="Telefonnummer (optional)"
+            label="Telefonnummer (Optional)"
             filled
             stack-label
             maxlength="20"
@@ -71,7 +71,7 @@
 
           <q-input
             v-model="steuernummer"
-            label="Steuernummer"
+            label="Steuernummer (Optional)"
             filled
             stack-label
             maxlength="16"
@@ -81,16 +81,16 @@
 
           <q-input
             v-model="empfaengercodex"
-            label="Empfängercodex"
+            label="Empfängercodex (Optional)"
             filled
             stack-label
             maxlength="16"
-            placeholder="Optionalfeld (7-stelliger Code)"
+            placeholder="7-stelliger Code"
           />
 
           <q-input
             v-model="mwst"
-            label="Mwst."
+            label="Mwst. (Optional) "
             filled
             stack-label
             maxlength="13"

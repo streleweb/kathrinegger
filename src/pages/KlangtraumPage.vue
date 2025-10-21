@@ -18,8 +18,7 @@
             arrows
             infinite
             swipeable
-            prev-icon="img:icons/left.png"
-            next-icon="img:icons/right.png"
+            navigation-icon="lens"
             class="bg-transparent cursor-pointer carousel-fixed-height"
           >
             <q-carousel-slide

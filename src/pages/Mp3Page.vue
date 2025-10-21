@@ -85,11 +85,11 @@ const audios = [
   {
     title: 'Miss Euph - Höhlenkummer',
     src: '/audio/7Höhlenkummer.mp3',
-    img: '/images/misseuph/höhle.webp'
+    img: '/images/misseuph/Höhlenkummer.webp'
   },
   {
     title: 'Miss Euph - Zuhause',
-    src: '/audio/8.Zuhause.mp3',
+    src: '/audio/8Zuhause.mp3',
     img: '/images/misseuph/haus.webp'
   },
   {

@@ -8,7 +8,7 @@
 
       <div class="q-mb-md">
         <img
-          src="/images/kathrin_aboutpage.png"
+          src="/images/kathrinabout_mobile.webp"
           alt="Kathrin with Euphonium"
           style="max-width:100%; height:auto;"
         />

@@ -6,7 +6,7 @@
 
           <div id="name-and-description">
             <h1 class="name text-primary">Kathrin Egger</h1>
-            <h2 class="description text-accent agrandir-thin-italic">Musikerin & Musikvermittlerin, Pädagogin & Authorin</h2>
+            <h2 class="description text-accent agrandir-thin-italic">Musikerin & Musikvermittlerin, Pädagogin & Autorin</h2>
           </div>
 
           <div class="hero-icons full-width row no-wrap justify-center q-gutter-x-md">
@@ -48,111 +48,137 @@
         </div>
     </section>
 
-
-    <section id="carousel">
-      <div id="carousel-container">
-      <q-card>
-        <!-- <h1 class="bg-secondary q-pt-lg q-pl-xl">
-          <div style="opacity: 1;">
-          Projekte
-        </div></h1> -->
-        <q-carousel
-          v-model="currentSlide"
-          animated
-          transition-next="slide-up"
-          transition-prev="slide-down"
-          navigation
-          control-color="primary"
-          arrows
-          infinite
-          vertical
-          swipeable
-          prev-icon="img:icons/up.png"
-          next-icon="img:icons/down.png"
-          class="bg-secondary cursor-pointer"
-          navigation-position="left"
-        >
-        <q-carousel-slide
-  v-for="slide in slides"
-  :key="slide.name"
-  :name="slide.name"
-  class="relative w-full h-full flex flex-center overflow-hidden"
-  @click="$router.push(slide.topic)"
+  <div class="carousel-wrapper">
+    <q-carousel
+  v-model="currentSlide"
+  animated
+  navigation
+  control-color="primary"
+  arrows
+  infinite
+  navigation-position="bottom"
+  navigation-icon="lens"
+  height="480px"
+  autoplay
+  :autoplay="5000"
+  :swipeable="isMobile"
+  :transition-prev="'slide-right'"
+  :transition-next="'slide-left'"
+  @mouseenter="pauseAutoplay"
+  @mouseleave="resumeAutoplay"
+  @touchstart="pauseAutoplay"
+  @touchend="resumeAutoplay"
+  class="bg-secondary cursor-pointer"
 >
-  <!-- Image with Opacity -->
-  <img
-    :src="slide.url"
-    alt="Slide image"
-    class="absolute inset-0 w-full h-full object-cover"
-    style="opacity:40%; height:100%;
-    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
-    "/>
-
-  <!-- Content -->
-  <div class="carousel-text-container relative z-10 p-4">
-    <h3 id="project-title" class="text-white q-my-sm">{{ slide.title }}</h3>
-    <div id="project-description" class="text-grey-3">{{ slide.description }}</div>
-  </div>
-</q-carousel-slide>
-        </q-carousel>
-      </q-card>
+  <q-carousel-slide
+    v-for="slide in slides"
+    :key="slide.name"
+    :name="slide.name"
+    class="relative w-full h-full flex flex-center overflow-hidden"
+    @click="$router.push(slide.topic)"
+  >
+    <q-img
+      :src="slide.url"
+      alt="Slide image"
+      :fit="isMobile ? 'cover' : 'contain'"
+      class="absolute inset-0 w-full h-full"
+      style="opacity: 0.5;"
+    />
+    <div class="carousel-text-container relative z-10 p-4">
+      <h3 id="project-title" class="text-white q-my-sm">{{ slide.title }}</h3>
+      <div id="project-description" class="text-grey-3">
+        {{ slide.description }}
+      </div>
     </div>
-    </section>
+  </q-carousel-slide>
+    </q-carousel>
+  </div>
+
+
+
   </q-page>
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted} from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-  const IMGURLS =
-    [
-      'images/kathrin_euphonium.webp',
-    ];
-  const currentImageIndex = ref(0);
-  const currentImageUrl = ref(IMGURLS[currentImageIndex.value]);
-  const currentSlide = ref('one');
-  const slides = [
+const IMGURLS = ['images/kathrin_euphonium.webp']
+const currentImageIndex = ref(0)
+const currentImageUrl = ref(IMGURLS[currentImageIndex.value])
+const currentSlide = ref('one')
+const isMobile = ref(window.innerWidth <= 768)
+let autoplayTimer: number | null = null
+
+function handleResize() {
+  isMobile.value = window.innerWidth <= 768
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize)
+})
+
+function pauseAutoplay() {
+  if (autoplayTimer) {
+    clearInterval(autoplayTimer)
+    autoplayTimer = null
+  }
+}
+
+function resumeAutoplay() {
+  if (!autoplayTimer) {
+    autoplayTimer = window.setInterval(() => {
+      const index = slides.findIndex(s => s.name === currentSlide.value)
+      const nextIndex = (index + 1) % slides.length
+      currentSlide.value = slides[nextIndex].name
+    }, 5000)
+  }
+}
+
+
+const slides = [
   {
     name: 'one',
     title: 'Die kleine Miss Euph',
     topic: 'misseuph',
-    description: 'Mein erstes Hörbuch ist jetzt erhältlich! Begib dich auf die Reise mit Miss Euph!',
+    description:
+      'Mein erstes Hörbuch ist jetzt erhältlich! Begib dich auf die Reise mit der kleinen Miss Euph!',
     url: '/images/homepage/misseuph.webp'
   },
   {
     name: 'two',
     title: 'Shakespeare in Love',
     topic: 'shakespeare',
-    description: 'Interaktive Theatereinführung der Freilichtspiele 2024 zum Stück "Shakespeare in Love"',
-    url: '/images/homepage/shakespeare.webp'
+    description:
+      'Interaktive Theatereinführung der Freilichtspiele 2024 zum Stück "Shakespeare in Love"',
+    url: '/images/homepage/shakespeare1.webp'
   },
   {
     name: 'three',
     title: 'Klang(T)räume',
     topic: 'klangtraeume',
-    description: 'Eine musikalische Reise quer durch die Traumwelt. ',
+    description: 'Eine musikalische Reise quer durch die Traumwelt.',
     url: '/images/klangtraeume/klangtraeume.webp'
   },
   {
     name: 'four',
     title: 'Abenteuer Musikkappelle',
     topic: 'abenteuermusikkappelle',
-    description: 'Musikkapellen-Workshop und interaktives Theater für Kinder',
-    url: '/images/abenteuermusikkappelle/abenteuer3.webp'
+    description:
+      'Musikkapellen-Workshop und interaktives Theater für Kinder',
+    url: '/images/abenteuermusikkappelle/abenteuer3_hochformat.webp'
   }
-];
+]
 
-
-  function updateHeroImg(): void {
-    currentImageIndex.value = (currentImageIndex.value + 1) % IMGURLS.length;
-    currentImageUrl.value = IMGURLS[currentImageIndex.value];
-  }
-
-  onMounted(() => {
-    setInterval(updateHeroImg, 10000);
-  });
+function updateHeroImg(): void {
+  currentImageIndex.value = (currentImageIndex.value + 1) % IMGURLS.length
+  currentImageUrl.value = IMGURLS[currentImageIndex.value]
+}
 </script>
+
 
 
 <style lang="scss" scoped>
@@ -176,6 +202,59 @@ $tablet-max: 1024px;
 //   opacity: 0.5;
 //   z-index: 0;
 // }
+
+/* make carousel centered and max-width on desktop/tablet */
+.carousel-wrapper {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+@media (min-width: 769px) {
+  .carousel-wrapper {
+    max-width: 900px; /* YOU REQUESTED: limit to 900px on desktop */
+    padding: 0;
+    margin-bottom: 3rem;
+  }
+}
+
+.q-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // mobile default
+}
+
+@media (min-width: 769px) {
+  .q-carousel__slide img {
+    object-fit: contain !important; // restores previous desktop look
+  }
+}
+
+
+
+.q-carousel__navigation {
+    bottom: 10px !important;
+      button {
+          margin: 0 5px;
+              opacity: 0.7;
+                  transition: transform 0.2s ease, opacity 0.2s ease;
+                      &.q-carousel__navigation-icon--active {
+                            opacity: 1;
+                                  transform: scale(1.3);
+                                      }
+                                        }
+}
+
+.q-carousel__slide {
+  position: relative;
+  img {
+    object-fit: contain !important;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
 
 
 .hero {
