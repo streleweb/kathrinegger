@@ -62,6 +62,16 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/BestellenPage.vue'), // SSR
       },
       {
+        path: 'impressum',
+        name: 'impressum',
+        component: () => import('pages/ImpressumPage.vue'), // SSR
+      },
+      {
+        path: 'datenschutz',
+        name: 'datenschutz',
+        component: () => import('pages/DatenschutzPage.vue'), // SSR
+      },
+      {
         path: 'samples',
         name: 'audiosamples',
         component: () => import('pages/AudioSamplePage.vue'), // SSR

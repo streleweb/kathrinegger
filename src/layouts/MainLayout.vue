@@ -98,8 +98,8 @@ function toggleRightDrawer() {
         <q-toolbar-title class="row justify-center text-body2 text-weight-thin">
 
           <div>
-            <q-btn color="primary" flat label="Impressum" @click="onClick" />
-            <q-btn color="primary" flat label="Datenschutz" @click="onClick" /></div>
+            <q-btn color="primary" flat label="Impressum" @click="$router.push({name: 'impressum'})" />
+            <q-btn color="primary" flat label="Datenschutz" @click="$router.push({name: 'datenschutz'})" /></div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
