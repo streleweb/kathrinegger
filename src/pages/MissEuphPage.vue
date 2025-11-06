@@ -12,8 +12,8 @@
           <q-carousel
             v-model="currentSlide"
             animated
-            transition-next="slide-right"
-            transition-prev="slide-left"
+            transition-next="slide-left"
+            transition-prev="slide-right"
             control-color="primary"
             arrows
             infinite

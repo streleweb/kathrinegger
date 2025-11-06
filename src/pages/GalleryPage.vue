@@ -73,7 +73,8 @@ const images = [
 const youtubeurls = [
   'https://www.youtube.com/embed/8l5bfHaXPBM?si=pt2qFxHT5OGhGoyw',
   'https://www.youtube.com/embed/wPAu9ZSG04U?si=xJPElLRGUq7vNN4r',
-  'https://www.youtube.com/embed/sg851lkm6tA?si=W61Jgjm2IDCYPQgP'
+  'https://www.youtube.com/embed/sg851lkm6tA?si=W61Jgjm2IDCYPQgP',
+  'https://www.youtube.com/embed/8v6Ky6NsyGk?si=AAfcBDFwSfVu_I-F'
 ]
 
 const totalSlides = images.length + youtubeurls.length

@@ -150,27 +150,43 @@ const slides = [
   },
   {
     name: 'two',
-    title: 'Shakespeare in Love',
-    topic: 'shakespeare',
+    title: 'Musikvermittlung',
+    topic: 'musikvermittlung',
     description:
-      'Interaktive Theatereinführung der Freilichtspiele 2024 zum Stück "Shakespeare in Love"',
-    url: '/images/homepage/shakespeare1.webp'
+      'In meinen Projekten möchte ich unterschiedliche Zielgruppen für Musik begeistern',
+    url: '/images/musikvermittlung/Musikvermittlung.webp'
   },
   {
     name: 'three',
-    title: 'Klang(T)räume',
-    topic: 'klangtraeume',
-    description: 'Eine musikalische Reise quer durch die Traumwelt.',
-    url: '/images/klangtraeume/klangtraeume.webp'
-  },
-  {
-    name: 'four',
-    title: 'Abenteuer Musikkappelle',
-    topic: 'abenteuermusikkappelle',
+    title: 'Medien',
+    topic: 'medien',
     description:
-      'Musikkapellen-Workshop und interaktives Theater für Kinder',
-    url: '/images/abenteuermusikkappelle/abenteuer3_hochformat.webp'
-  }
+      'Zu meinen Bildern und Videos',
+    url: '/images/kathrineuphonium1.webp'
+  },
+  // {
+  //   name: 'two',
+  //   title: 'Shakespeare in Love',
+  //   topic: 'shakespeare',
+  //   description:
+  //     'Interaktive Theatereinführung der Freilichtspiele 2024 zum Stück "Shakespeare in Love"',
+  //   url: '/images/homepage/shakespeare1.webp'
+  // },
+  // {
+  //   name: 'two',
+  //   title: 'Klang(T)räume',
+  //   topic: 'klangtraeume',
+  //   description: 'Eine musikalische Reise quer durch die Traumwelt.',
+  //   url: '/images/klangtraeume/klangtraeume.webp'
+  // },
+  // {
+  //   name: 'four',
+  //   title: 'Abenteuer Musikkappelle',
+  //   topic: 'abenteuermusikkappelle',
+  //   description:
+  //     'Musikkapellen-Workshop und interaktives Theater für Kinder',
+  //   url: '/images/abenteuermusikkappelle/abenteuer3_hochformat.webp'
+  // }
 ]
 
 function updateHeroImg(): void {
