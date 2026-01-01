@@ -10,7 +10,7 @@
           </div>
 
           <div class="hero-icons full-width row no-wrap justify-center q-gutter-x-md">
-            <a href="https://www.youtube.com/@kathrinegger6575">
+            <a href="https://youtube.com/@kathrineuph?si=ML1PrWtg68MlCGUG">
               <q-btn color="primary"
                 icon="img:icons/youtube.svg"
                 size="14px"
